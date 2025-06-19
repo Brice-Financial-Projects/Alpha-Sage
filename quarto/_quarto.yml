@@ -3,7 +3,7 @@ project:
   output-dir: ../docs_site
 
 website:
-  title: "AlphaSage: Quant Research Hub"
+  title: "AlphaSage-Commodity Edition: Quant Research Hub"
   navbar:
     left:
       - text: Home

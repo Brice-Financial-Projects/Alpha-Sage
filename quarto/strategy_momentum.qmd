@@ -1,3 +1,105 @@
 # Momentum Strategy
 
-Document your approach and rationale.
+---
+title: "Momentum Strategy: Commodity ETF Edition"
+format:
+  html:
+    toc: true
+    code-fold: true
+---
+
+# 🧠 Strategy Overview
+
+This strategy aims to identify **commodity ETFs** exhibiting sustained upward momentum, using a combination of **trend confirmation** and **relative strength**.
+
+The objective is to capture medium-term trends in liquid commodity-based ETFs using **technically-driven signals**, with no reliance on fundamentals.
+
+---
+
+# 📈 Universe Definition
+
+We focus on a curated set of **liquid, unleveraged commodity ETFs**, including:
+
+| Ticker | Commodity | Description |
+|--------|-----------|-------------|
+| GLD    | Gold      | SPDR Gold Shares |
+| SLV    | Silver    | iShares Silver Trust |
+| DBC    | Diversified | Invesco DB Commodity Index |
+| USO    | Oil       | United States Oil Fund |
+| UNG    | Natural Gas | United States Natural Gas Fund |
+| DBA    | Agriculture | Invesco DB Agriculture Fund |
+| CORN   | Corn      | Teucrium Corn Fund |
+| WEAT   | Wheat     | Teucrium Wheat Fund |
+| SOYB   | Soybeans  | Teucrium Soybean Fund |
+
+---
+
+# 📊 Signal Construction
+
+The strategy uses a **two-stage filter**:
+
+### 1. **Trend Filter (SMA Confirmation)**
+Only include ETFs where the current price is **above the 100-day simple moving average** (SMA). This ensures we are only considering assets in a confirmed uptrend.
+
+$$
+\text{Trend Filter: } \frac{P_{t}}{SMA_{100}} > 1.0
+$$
+
+### 2. **Relative Strength Ranking**
+Among ETFs passing the trend filter, we calculate **3-month total return** and rank them:
+
+$$
+\text{Momentum Score: } \frac{P_{t}}{P_{t - 63}} - 1
+$$
+
+Where:
+- \( P_t \) = current closing price
+- \( P_{t - 63} \) = closing price 3 months ago (approx. 63 trading days)
+
+---
+
+# 🔎 Selection Process
+
+1. **Apply Trend Filter**: Drop any ETFs with price below their 100-day SMA.
+2. **Rank Remaining ETFs**: By 3-month return (descending).
+3. **Select Top N**: Typically the top 3 ETFs are chosen for equal-weighted allocation.
+
+---
+
+# 🔁 Rebalancing Logic
+
+- **Frequency**: Monthly (every 21 trading days)
+- **Positioning**: Equal weight across selected ETFs
+- **No leverage**, no shorting
+- **Transaction cost**: Flat $0.005/share (optional)
+
+---
+
+# 📉 Risk Management
+
+- Max number of positions: 3
+- Exit ETF if it drops below 100-day SMA during holding period
+- Optional: Use trailing stop (e.g., -10%) in future versions
+
+---
+
+# 🧪 Next Steps
+
+- Implement scoring logic in `scoring.py`
+- Add backtest simulation in `backtest_engine.py`
+- Visualize equity curves and rolling Sharpe using `visualization.py`
+- Document test cases in `tests/test_scoring.py`
+
+---
+
+# 📌 Notes
+
+This strategy is inspired by classic CTA and trend-following systems. While simple in design, its performance can be robust across asset classes, especially in macro-driven environments where commodity momentum often dominates.
+
+Future enhancements may include:
+- Volatility-adjusted position sizing
+- Rolling Z-score filters
+- Incorporation of volume or sentiment data
+
+---
+

@@ -1,2 +1,2 @@
-# Welcome to AlphaSage
+# Welcome to AlphaSage-Commodity Edition
 This is your quant research hub.

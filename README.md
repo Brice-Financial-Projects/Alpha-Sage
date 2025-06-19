@@ -1,6 +1,6 @@
 # 📈 AlphaSage--Commodities Edition: Quant Stock Screener & Backtest Framework
 
-**AlphaSage** is a senior-level Python-based platform for developing, evaluating, and publishing quantitative equity strategies. Built for real-world alpha generation, it includes a modular simulation engine, formal research publishing via Quarto, and an optional Streamlit dashboard for visualizing and interacting with results.
+**AlphaSage--Commodities Edition** is a senior-level Python-based platform for developing, evaluating, and publishing quantitative equity strategies. Built for real-world alpha generation, it includes a modular simulation engine, formal research publishing via Quarto, and an optional Streamlit dashboard for visualizing and interacting with results.
 
 ---
 
@@ -17,7 +17,7 @@
 ## 📂 Project Structure
 
 ```
-AlphaSage/
+AlphaSage--CommoditiesEdition/
 ├── data/                # Raw, processed, and external data sources
 ├── src/                 # Core logic: data, scoring, backtesting, metrics
 ├── streamlit_app/       # Interactive dashboard components
@@ -75,7 +75,7 @@ quarto render strategy_momentum.qmd
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/Brice-Financial-Projects/Alpha-Sage
+git clone https://github.com/Brice-Financial-Projects/Alpha-Sage--Commodities-Edition.git 
 cd AlphaSage
 ```
 

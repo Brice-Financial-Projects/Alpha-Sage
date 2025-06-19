@@ -1,4 +1,4 @@
-# 📈 AlphaSage: Quant Stock Screener & Backtest Framework
+# 📈 AlphaSage--Commodities Edition: Quant Stock Screener & Backtest Framework
 
 **AlphaSage** is a senior-level Python-based platform for developing, evaluating, and publishing quantitative equity strategies. Built for real-world alpha generation, it includes a modular simulation engine, formal research publishing via Quarto, and an optional Streamlit dashboard for visualizing and interacting with results.
 
@@ -75,7 +75,7 @@ quarto render strategy_momentum.qmd
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/your-user/AlphaSage.git
+git clone https://github.com/Brice-Financial-Projects/Alpha-Sage
 cd AlphaSage
 ```
 

@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: ../docs_site
+
+website:
+  title: "AlphaSage: Quant Research Hub"
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Strategies
+        menu:
+          - text: Momentum Strategy
+            href: strategy_momentum.qmd
+          - text: Value Strategy
+            href: strategy_value.qmd
+      - text: Reports
+        menu:
+          - text: Backtest Report
+            href: backtest_report.qmd
+          - text: Alpha Journal
+            href: alpha_journal.qmd
+      - text: Methodology
+        href: methodology.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2
+    code-fold: true

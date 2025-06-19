@@ -1,0 +1,3 @@
+# Methodology
+
+Metrics, signal generation, and technical details.

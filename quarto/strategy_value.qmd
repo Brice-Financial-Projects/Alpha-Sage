@@ -1,0 +1,3 @@
+# Value Strategy
+
+Document your approach and rationale.

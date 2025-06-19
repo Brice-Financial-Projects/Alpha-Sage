@@ -1,0 +1,3 @@
+# Momentum Strategy
+
+Document your approach and rationale.
